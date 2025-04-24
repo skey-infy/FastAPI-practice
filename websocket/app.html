@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI WebSocket Chat</title>
+</head>
+<body>
+    <h1>WebSocket Chat</h1>
+    <div id="chat-log"></div>
+    <input type="text" id="message-input">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        const chatLog = document.getElementById('chat-log');
+        const messageInput = document.getElementById('message-input');
+        const websocket = new WebSocket('ws://localhost:8000/ws');
+
+        websocket.onmessage = function(event) {
+            const message = document.createElement('div');
+            message.textContent = event.data;
+            chatLog.appendChild(message);
+        };
+
+        function sendMessage() {
+            const message = messageInput.value;
+            websocket.send(message);
+            messageInput.value = '';
+        }
+    </script>
+</body>
+</html>

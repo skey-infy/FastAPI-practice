@@ -1,0 +1,12 @@
+test tag :- test message
+Article call. :- All article has been fetched.
+test tag :- test message
+Article call. :- All article has been fetched.
+test tag :- test message
+Article call. :- All article has been fetched.
+defaulttag :- Default message
+2025-04-24 15:33:09.492933 :- http://127.0.0.1:8000/dependencies/new?name=Satyajit%20Murmu&email=sakibmondal7%40gmail.com --- defaulttag :- Default message
+2025-04-24 15:33:28.140820 :- http://127.0.0.1:8000/dependencies?sep=%3A- --- defaulttag :- Default message
+2025-04-24 15:34:57.207948 :- http://127.0.0.1:8000/dependencies?sep=%3A-&tag=defaulttag&message=Default%20message --- GET --- defaulttag :- Default message
+2025-04-24 15:35:03.897334 :- http://127.0.0.1:8000/dependencies?sep=%3A-&tag=defaulttag&message=Default%20message --- POST --- defaulttag :- Default message
+2025-04-24 15:35:06.192070 :- http://127.0.0.1:8000/dependencies?sep=%3A-&tag=defaulttag&message=Default%20message --- POST --- defaulttag :- Default message

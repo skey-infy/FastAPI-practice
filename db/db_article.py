@@ -25,3 +25,12 @@ def get_article(db:Session, id:int):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Article with id : - {id} not found.")
     return article
 
+def get_all_article(db: Session):
+    try:
+        articles = db.query(DBArticles).all()
+    except Exception as e:
+        raise HTTPException(detail="Something wrong with code", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    if not articles:
+        raise HTTPException(detail="Something wrong with code", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    return articles
+
